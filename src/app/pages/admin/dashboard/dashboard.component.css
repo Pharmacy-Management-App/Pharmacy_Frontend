@@ -1,0 +1,31 @@
+/* dashboard.component.css */
+.admin-layout { display:flex; min-height:100vh; background:#f0f2f5; }
+.sidebar { width:240px; background:#1a3c5e; color:#fff;
+  display:flex; flex-direction:column; padding:0; position:fixed;
+  height:100vh; }
+.brand { display:flex; align-items:center; gap:10px; padding:24px 20px;
+  font-size:18px; font-weight:700; border-bottom:1px solid rgba(255,255,255,0.1); }
+.brand-icon { background:#3498db; border-radius:8px;
+  padding:4px 10px; font-size:20px; }
+nav { display:flex; flex-direction:column; padding:16px 12px; gap:4px; }
+nav a { color:rgba(255,255,255,0.75); text-decoration:none;
+  padding:10px 14px; border-radius:8px; font-size:14px; transition:all .2s; }
+nav a:hover, nav a.active { background:rgba(255,255,255,0.12);
+  color:#fff; }
+.main-content { margin-left:240px; padding:32px; flex:1; }
+.page-header h1 { font-size:26px; color:#1a3c5e; margin-bottom:24px; }
+.loading { color:#666; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:20px; }
+.stat-card { background:#fff; border-radius:12px; padding:24px;
+  display:flex; align-items:center; gap:16px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+.stat-icon { font-size:32px; }
+.stat-info h3 { font-size:28px; font-weight:700; margin:0; color:#1a3c5e; }
+.stat-info p { margin:4px 0 0; font-size:13px; color:#888; }
+.blue { border-left:4px solid #3498db; }
+.green { border-left:4px solid #27ae60; }
+.orange { border-left:4px solid #e67e22; }
+.purple { border-left:4px solid #8e44ad; }
+.red { border-left:4px solid #e74c3c; }
+.teal { border-left:4px solid #1abc9c; }

@@ -1,0 +1,35 @@
+/* manage-pharmacists.component.css */
+.admin-layout { display:flex; min-height:100vh; background:#f0f2f5; }
+.sidebar { width:240px; background:#1a3c5e; color:#fff;
+  position:fixed; height:100vh; display:flex; flex-direction:column; }
+.brand { display:flex; align-items:center; gap:10px; padding:24px 20px;
+  font-size:18px; font-weight:700; border-bottom:1px solid rgba(255,255,255,0.1); }
+.brand-icon { background:#3498db; border-radius:8px; padding:4px 10px; }
+nav { display:flex; flex-direction:column; padding:16px 12px; gap:4px; }
+nav a { color:rgba(255,255,255,0.75); text-decoration:none;
+  padding:10px 14px; border-radius:8px; font-size:14px; }
+nav a:hover, nav a.active { background:rgba(255,255,255,0.12); color:#fff; }
+.main-content { margin-left:240px; padding:32px; flex:1; }
+h1 { font-size:24px; color:#1a3c5e; margin-bottom:20px; }
+.msg { background:#d4edda; color:#155724; padding:10px; border-radius:8px; margin-bottom:16px; }
+.filter-bar { display:flex; gap:10px; margin-bottom:16px; }
+.filter-bar .btn { padding:8px 20px; border:2px solid #1a3c5e;
+  background:#fff; color:#1a3c5e; border-radius:8px; cursor:pointer; font-size:13px; }
+.filter-bar .btn.active { background:#1a3c5e; color:#fff; }
+.data-table { width:100%; border-collapse:collapse; background:#fff;
+  border-radius:10px; overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+.data-table th { background:#1a3c5e; color:#fff;
+  padding:12px 16px; text-align:left; font-size:13px; }
+.data-table td { padding:12px 16px; border-bottom:1px solid #f0f0f0; font-size:14px; }
+.badge { padding:4px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+.badge.pending { background:#fff3cd; color:#856404; }
+.badge.approved { background:#d4edda; color:#155724; }
+.badge.rejected { background:#f8d7da; color:#721c24; }
+.actions { display:flex; gap:8px; }
+.btn { border:none; border-radius:6px; padding:6px 14px;
+  cursor:pointer; font-size:13px; color:#fff; }
+.btn.green { background:#27ae60; }
+.btn.green:hover { background:#219a52; }
+.btn.red { background:#e74c3c; }
+.btn.red:hover { background:#c0392b; }

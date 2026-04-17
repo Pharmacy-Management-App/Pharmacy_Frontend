@@ -1,1 +1,33 @@
-<p>approved-prescriptions works!</p>
+<!-- src/app/pages/pharmacist/approved-prescriptions/approved-prescriptions.component.html -->
+<div class="pharma-layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">⚕</span><span>Pharmacist Portal</span></div>
+    <nav>
+      <a routerLink="/pharmacist/dashboard">Dashboard</a>
+      <a routerLink="/pharmacist/pending-prescriptions">Pending Rx</a>
+      <a routerLink="/pharmacist/approved-prescriptions" class="active">Approved Rx</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <h1>Approved Prescriptions</h1>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="!loading && prescriptions.length === 0" class="empty">
+      No approved prescriptions yet.</div>
+    <table *ngIf="!loading && prescriptions.length > 0" class="data-table">
+      <thead>
+        <tr><th>#</th><th>Patient</th><th>File</th>
+            <th>Approved By</th><th>Notes</th><th>Reviewed</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of prescriptions">
+          <td>{{ p.id }}</td>
+          <td>{{ p.userId }}</td>
+          <td>{{ p.originalFileName }}</td>
+          <td>{{ p.reviewedBy }}</td>
+          <td>{{ p.notes || "-" }}</td>
+          <td>{{ p.reviewedAt | date:"short" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>

@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
+  role: string | null = '';
+  email: string | null = '';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.role = localStorage.getItem('role');
+    this.email = localStorage.getItem('email');
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }

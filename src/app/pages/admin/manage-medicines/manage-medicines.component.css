@@ -1,0 +1,34 @@
+/* manage-medicines.component.css */
+.admin-layout { display:flex; min-height:100vh; background:#f0f2f5; }
+.sidebar { width:240px; background:#1a3c5e; color:#fff;
+  position:fixed; height:100vh; display:flex; flex-direction:column; }
+.brand { display:flex; align-items:center; gap:10px; padding:24px 20px;
+  font-size:18px; font-weight:700; border-bottom:1px solid rgba(255,255,255,0.1); }
+.brand-icon { background:#3498db; border-radius:8px; padding:4px 10px; }
+nav { display:flex; flex-direction:column; padding:16px 12px; gap:4px; }
+nav a { color:rgba(255,255,255,0.75); text-decoration:none;
+  padding:10px 14px; border-radius:8px; font-size:14px; }
+nav a:hover, nav a.active { background:rgba(255,255,255,0.12); color:#fff; }
+.main-content { margin-left:240px; padding:32px; flex:1; }
+.top-bar { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.top-bar h1 { font-size:24px; color:#1a3c5e; }
+.msg { background:#d4edda; color:#155724; padding:10px; border-radius:8px; margin-bottom:16px; }
+.form-card { background:#fff; border-radius:12px; padding:24px;
+  margin-bottom:24px; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+.form-card h3 { margin-bottom:16px; color:#1a3c5e; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.form-grid input, .form-grid textarea {
+  padding:10px 14px; border:1px solid #ddd; border-radius:8px; font-size:14px; }
+.form-grid textarea { grid-column:1/-1; min-height:80px; }
+.btn-primary { background:#1a3c5e; color:#fff; border:none;
+  border-radius:8px; padding:10px 24px; cursor:pointer; font-size:14px; }
+.btn-primary:hover { background:#154a7a; }
+.data-table { width:100%; border-collapse:collapse; background:#fff;
+  border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+.data-table th { background:#1a3c5e; color:#fff; padding:12px 16px; text-align:left; }
+.data-table td { padding:12px 16px; border-bottom:1px solid #f0f0f0; font-size:14px; }
+.badge { padding:4px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+.badge.green { background:#d4edda; color:#155724; }
+.badge.red { background:#f8d7da; color:#721c24; }
+.btn-sm { background:#3498db; color:#fff; border:none; border-radius:6px;
+  padding:5px 12px; cursor:pointer; font-size:12px; }
