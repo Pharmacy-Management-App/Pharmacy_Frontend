@@ -36,8 +36,8 @@ const routes: Routes = [
   // ============================================================
   {
     path: 'customer',
-    canActivate: [AuthGuard, RoleGuard],
-    data: { roles: ['Customer'] },
+    // canActivate: [AuthGuard, RoleGuard],
+    // data: { roles: ['Customer'] },
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
@@ -78,8 +78,8 @@ const routes: Routes = [
   // ============================================================
   {
     path: 'pharmacist',
-    canActivate: [AuthGuard, RoleGuard],
-    data: { roles: ['Pharmacist'] },
+    // canActivate: [AuthGuard, RoleGuard],
+    // data: { roles: ['Pharmacist'] },
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
@@ -108,8 +108,8 @@ const routes: Routes = [
   // ============================================================
   {
     path: 'admin',
-    canActivate: [AuthGuard, RoleGuard],
-    data: { roles: ['Admin'] },
+    // canActivate: [AuthGuard, RoleGuard],
+    // data: { roles: ['Admin'] },
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {

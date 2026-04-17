@@ -1,1 +1,36 @@
-<p>manage-users works!</p>
+<!-- src/app/pages/admin/manage-users/manage-users.component.html -->
+<div class="admin-layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">+</span><span>PharmaCare Admin</span></div>
+    <nav>
+      <a routerLink="/admin/dashboard">Dashboard</a>
+      <a routerLink="/admin/manage-users" class="active">Users</a>
+      <a routerLink="/admin/manage-pharmacists">Pharmacists</a>
+      <a routerLink="/admin/manage-medicines">Medicines</a>
+      <a routerLink="/admin/manage-inventory">Inventory</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <h1>Manage Users</h1>
+    <div *ngIf="message" class="msg">{{ message }}</div>
+    <div *ngIf="loading">Loading...</div>
+    <table *ngIf="!loading" class="data-table">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Email</th>
+            <th>Phone</th><th>Status</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of users">
+          <td>{{ u.id }}</td>
+          <td>{{ u.fullName }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.phone }}</td>
+          <td><span [class]="u.isActive ? 'badge green' : 'badge red'">
+            {{ u.isActive ? "Active" : "Inactive" }}</span></td>
+          <td><button (click)="toggle(u.id)" class="btn">
+            {{ u.isActive ? "Deactivate" : "Activate" }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>

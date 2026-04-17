@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="logo">Pharmacy System</div>
+
+  <div class="nav-right">
+    <span class="user-info">
+      {{ email }} ({{ role | uppercase }})
+    </span>
+
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
