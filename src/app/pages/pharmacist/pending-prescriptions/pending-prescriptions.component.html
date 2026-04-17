@@ -1,1 +1,40 @@
-<p>pending-prescriptions works!</p>
+<!-- src/app/pages/pharmacist/pending-prescriptions/pending-prescriptions.component.html -->
+<div class="pharma-layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">⚕</span><span>Pharmacist Portal</span></div>
+    <nav>
+      <a routerLink="/pharmacist/dashboard">Dashboard</a>
+      <a routerLink="/pharmacist/pending-prescriptions" class="active">Pending Rx</a>
+      <a routerLink="/pharmacist/approved-prescriptions">Approved Rx</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <h1>Pending Prescriptions</h1>
+    <div *ngIf="message" class="msg-success">{{ message }}</div>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="!loading && prescriptions.length === 0" class="empty">
+      No pending prescriptions.</div>
+    <div *ngIf="!loading" class="cards-grid">
+      <div *ngFor="let p of prescriptions" class="rx-card">
+        <div class="rx-header">
+          <span class="badge pending">Pending</span>
+          <span class="rx-id">#{{ p.id }}</span>
+        </div>
+        <div class="rx-body">
+          <p><strong>File:</strong> {{ p.originalFileName }}</p>
+          <p><strong>Uploaded:</strong> {{ p.uploadedAt | date:"medium" }}</p>
+          <p><strong>Patient ID:</strong> {{ p.userId }}</p>
+          <a [href]="apiBase + p.filePath" target="_blank" class="view-link">View File</a>
+        </div>
+        <div class="rx-footer">
+          <textarea [(ngModel)]="notes[p.id]"
+            placeholder="Optional notes..." rows="2"></textarea>
+          <div class="action-btns">
+            <button (click)="approve(p.id)" class="btn-approve">Approve</button>
+            <button (click)="reject(p.id)" class="btn-reject">Reject</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

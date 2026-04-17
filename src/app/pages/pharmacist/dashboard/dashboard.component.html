@@ -1,1 +1,47 @@
-<p>dashboard works!</p>
+<!-- src/app/pages/pharmacist/dashboard/dashboard.component.html -->
+<div class="pharma-layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">⚕</span><span>Pharmacist Portal</span></div>
+    <nav>
+      <a routerLink="/pharmacist/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/pharmacist/pending-prescriptions" routerLinkActive="active">Pending Rx</a>
+      <a routerLink="/pharmacist/approved-prescriptions" routerLinkActive="active">Approved Rx</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <h1>Pharmacist Dashboard</h1>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="!loading" class="stats-grid">
+      <div class="stat-card orange">
+        <div class="stat-icon">⏳</div>
+        <div>
+          <h3>{{ pending.length }}</h3>
+          <p>Pending Prescriptions</p>
+        </div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon">✅</div>
+        <div>
+          <h3>{{ approved.length }}</h3>
+          <p>Approved Prescriptions</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!loading && pending.length > 0" class="recent-section">
+      <h2>Recent Pending</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>Patient</th><th>File</th><th>Uploaded</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of pending.slice(0,5)">
+            <td>{{ r.userId }}</td>
+            <td>{{ r.originalFileName }}</td>
+            <td>{{ r.uploadedAt | date }}</td>
+            <td><span class="badge pending">Pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

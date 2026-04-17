@@ -6,10 +6,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FooterComponent } from './components/footer/footer.component';
  
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+     NavbarComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

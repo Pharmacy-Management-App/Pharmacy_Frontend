@@ -1,1 +1,8 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+  <a *ngFor="let item of menuItems"
+     [routerLink]="item.route"
+     routerLinkActive="active"
+     class="menu-item">
+    {{ item.label }}
+  </a>
+</div>
